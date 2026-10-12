@@ -32,6 +32,8 @@ These steps seem almost too obvious to be useful. Yet their simplicity conceals 
 
 The fourth step is the one that interests me most. Pólya asks us to pause after finding a solution and reflect: What did we do? Why did it work? What failed along the way? Could the argument be improved? Where else might the same idea be useful?
 
+> **Margin note: Pólya’s wider method.** His approach was deliberately fluid rather than a rigid sequence of rules. In [*Mathematics and Plausible Reasoning*](https://www.google.com/search?kgmid=%2Fm%2F012vy2tk&q=Mathematics+and+Plausible+Reasoning), he treats heuristics, guesswork, analogy, and inductive reasoning as legitimate tools for discovering mathematical ideas before proof.
+
 This is the step I believe we too often neglect, both in mathematical education and in the way mathematical achievements are presented. We celebrate the final proof while concealing the reflections, failed approaches, conceptual revisions, and philosophical questions that made the proof meaningful. Yet “looking back” has often produced some of mathematics’ most important conceptual breakthroughs.
 
 Consider the debate over the vibrating string in the eighteenth century.
@@ -65,6 +67,12 @@ Some of those attempts tried to extend ordinary factorisation into unfamiliar nu
 Those attempts did not produce a complete proof of Fermat’s Last Theorem. That would come much later. But the concepts developed along the way became foundational to algebraic number theory and abstract algebra.
 
 Sometimes the ideas discovered during an unsuccessful proof are more important than the proof itself. They are “the little acorns from which mighty oaks grow”.
+
+> **Margin note: On “little acorns.”** The phrase refers to Richard Hamming’s 1986 talk, [*You and Your Research*](https://nlp.cs.vcu.edu/lab/hamming.html), in which he warned that recognition can make scientists reluctant to work on small problems:
+>
+> “When you are famous it is hard to work on small problems. This is what did [Shannon](https://www.goodreads.com/author/show/3135655.Shannon "Shannon") in. After information theory, what do you do for an encore? The great scientists often make this error. They fail to continue to plant the little acorns from which the mighty oak trees grow. They try to get the big thing right off. And that isn't the way things go. So that is another reason why you find that when you get early recognition it seems to sterilize you.”
+>
+> Richard Hamming
 
 This is why I am, despite everything, quite excited about AI in mathematics.
 

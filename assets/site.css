@@ -144,6 +144,8 @@ h3 { font-size: 18px; font-weight: 700; line-height: 1.4; color: var(--strong); 
 aside { font-size: 12.5px; line-height: 1.5; color: var(--muted); margin: 0 0 1.2em; }
 @media (min-width: 1024px) { aside { font-size: 13px; } }
 aside b { color: var(--strong); font-weight: 600; }
+.margin-note .note-quote { margin: 0.7em 0 0.45em; font-family: var(--math); font-style: italic; }
+.margin-note cite { display: block; color: var(--quiet); font-style: normal; }
 @media (min-width: 1080px) {
   .pinned-writing > .margin-quote { grid-row: 2 / span 20; padding-top: 0.15rem; }
 }
