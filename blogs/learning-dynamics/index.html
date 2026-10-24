@@ -58,7 +58,10 @@ window.MathJax = {
     </div>
     <section class="row" aria-labelledby="what-is-learning-dynamics">
       <h2 id="what-is-learning-dynamics">1. What is training dynamics about?</h2>
+        <div class="margin-annotated">
         <p>One idea gaining traction in efforts to build a science of AI is to study how models change as they learn (i.e., their training dynamics). Recent papers make this case explicitly: <a href="https://proceedings.mlr.press/v306/biderman26a.html"><em>Position: Don’t Just “Fix it in Post”: A Science of AI Must Study Training Dynamics</em></a> from ICML 2026 argues that understanding model behaviour requires studying the training processes that produce it, while <a href="https://arxiv.org/html/2604.21691v1"><em>There Will Be a Scientific Theory of Deep Learning</em></a> outlines an emerging “mechanics” of learning, built around quantitative predictions of how neural networks evolve during training.</p>
+          <aside class="margin-note"><p><strong>The ML research community.</strong> <a href="https://icml.cc/">ICML</a>, <a href="https://neurips.cc/">NeurIPS</a>, and <a href="https://iclr.cc/">ICLR</a> are three of machine learning’s largest and most influential conferences. Researchers review one another’s papers and present accepted work. These meetings help people share ideas, find collaborators, and shape which questions receive attention.</p></aside>
+        </div>
         <p>So what is training dynamics? Broadly, it is the study of how a model’s parameters, representations, and predictions evolve during training, and how that evolution depends on the data, architecture, and learning algorithm. A useful formulation, in my opinion, comes from <a href="#ref-ren-sutherland-2025">Ren and Sutherland’s (2025)</a> <em>Learning Dynamics of LLM Finetuning</em>, which received an <a href="https://blog.iclr.cc/2025/04/22/announcing-the-outstanding-paper-awards-at-iclr-2025/">Outstanding Paper Award at ICLR 2025</a>. In particular, they frame training dynamics as studying:</p>
         <figure class="learning-definition" aria-labelledby="training-dynamics-question">
           <div class="definition-mapping">
