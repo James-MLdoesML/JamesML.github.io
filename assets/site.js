@@ -1,6 +1,10 @@
 if (location.protocol === 'file:') {
   document.querySelectorAll('a[href^="blogs/"][href$="/"], a[href^="../blogs/"][href$="/"], a[data-local-index]').forEach((link) => {
-    link.href += 'index.html';
+    const url = new URL(link.href);
+    if (url.pathname.endsWith('/')) {
+      url.pathname += 'index.html';
+      link.href = url.href;
+    }
   });
 }
 const languageButtons = document.querySelectorAll(".language-switch button");

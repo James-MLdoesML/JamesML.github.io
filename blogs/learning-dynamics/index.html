@@ -42,7 +42,7 @@ window.MathJax = {
       </ul>
     </nav>
     <header class="subpage-title essay-title learning-dynamics-title">
-      <p class="eyebrow"><a href="../science-of-machine-learning-primer-series.html">Science of Machine Learning · Sketches Series</a></p>
+      <p class="eyebrow"><a data-local-index href="../science-of-machine-learning-primer-series/">Science of Machine Learning · Sketches Series</a></p>
       <h1>Training Dynamics</h1>
       <p class="description learning-dynamics-tagline">Figuring out how neural networks learn from data.</p>
     </header>
@@ -272,7 +272,7 @@ window.MathJax = {
         <p>Since \(1+s^2&gt;0\), this always pushes \(s\) towards zero. Both weights approach the origin, where the loss is \(\tfrac12\). Starting at the origin itself leaves the network there.</p>
 </div>
 </details>
-        <p>The diagram below is a <strong>phase portrait</strong>: it shows the training trajectories and their long-term outcomes for our simple learning problem. The picture, thus, makes the implicit bias visible.</p>
+        <p>Putting everything together, we can make the following diagram below. The diagram below is called a <strong>phase portrait</strong>: it shows the training trajectories and their long-term outcomes for our simple learning problem. The picture, thus, makes the implicit bias visible.</p>
       </section>
       <figure class="learning-outcomes-figure">
         <img src="images/learning-dynamics-phase-portrait.png" alt="Phase portrait of gradient flow for y = abx: trajectories above a = -b reach positive solutions on ab = 1; those below reach negative solutions; trajectories on a = -b flow into the saddle at the origin." width="1640" height="1720" loading="lazy">

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Science of Machine Learning. A primer series by James Ming Liang Ang.">
+<title>Science of Machine Learning · James Ming Liang Ang</title>
+<link rel="canonical" href="https://jamesmldoesml.github.io/blogs/science-of-machine-learning-primer-series/">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<script>try { if (localStorage.getItem("theme") === "dark") document.documentElement.dataset.theme = "dark"; } catch {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital@0;1&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <div class="page">
+    <div class="top-controls">
+      <div class="language-switch" role="group" aria-label="Page language style">
+        <button type="button" data-language="english" aria-pressed="true">English</button>
+        <button type="button" data-language="singlish" aria-pressed="false">Singlish</button>
+      </div>
+      <label class="theme-switch"><span>Dark mode</span><input class="theme-toggle" type="checkbox" role="switch"><span class="theme-track" aria-hidden="true"><span class="theme-knob"></span></span></label>
+    </div>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="home-link" href="../../index.html">James Ming Liang Ang</a>
+      <ul>
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../../research.html" data-english="Research" data-singlish="Die die must try">Research</a></li>
+        <li><a href="../../writing.html" aria-current="page" data-english="Writing" data-singlish="Le kua simi?">Writing</a></li>
+        <li><a href="../../teaching.html" data-english="Teaching" data-singlish="Cher">Teaching</a></li>
+        <li><a href="../../about.html" data-english="About" data-singlish="For kaypoh people">About</a></li>
+      </ul>
+    </nav>
+    <header class="subpage-title essay-title learning-dynamics-title science-of-machine-learning-title">
+      <p class="eyebrow">Primer Series</p>
+      <h1>Science of Machine Learning</h1>
+      <p class="description learning-dynamics-tagline">From alchemy to a science of learning.</p>
+      <a class="primer-list-button" href="#series-primers">Jump straight to primer list ↓</a>
+    </header>
+    <div class="byline">
+      <p class="article-meta"><span>James Ming Liang Ang</span><span>16 October 2026</span></p>
+    </div>
+  </div>
+
+  <article class="primer-series-article" aria-label="Science of Machine Learning">
+<section class="row" aria-labelledby="from-alchemy-to-science">
+        <h2 id="from-alchemy-to-science">Preamble. From Alchemy to Science</h2>
+        <p>In 2017, accepting the NeurIPS Test of Time Award for his work with Ben Recht, Ali Rahimi argued that machine learning had become alchemy: a collection of recipes that worked, without a satisfactory account of why. This was a striking departure from the optimism of just a few years earlier, when theory and practice had seemed to be drawing closer together—a contrast Mark Schmidt revisited in his <a href="https://qr.generatorqr.com/6y7G16gpF">tutorial slides</a>.</p>
+        <p>Nine years later, Stanford offers <a href="https://deep-learning-alchemy.github.io/">CS 312: Deep Learning Alchemy</a>. The title captures something about the field’s practical priorities. When training large models, an intuition that lets you <strong>predict the outcome of an experiment before you run it</strong> can be more immediately useful than a theoretical explanation of the phenomena involved.</p>
+        <p>But what would it mean to close that gap? Heisenberg put the challenge well:</p>
+        <blockquote class="pull-quote"><p>“The exact sciences start from the assumption that in the end, it will always be possible to understand nature, even in every new field of experience, but that we may make no a priori assumption as to the meaning of ‘understand’.”</p><cite>Werner Heisenberg</cite></blockquote>
+        <p>The difficult word is <em>understand</em>. If someone can reliably predict how a model will train, in what sense have they understood it? Practical intuition is a real achievement. Yet being able to anticipate an outcome does not necessarily mean being able to explain why it occurs, when the prediction will fail, or how the same principles apply elsewhere.</p>
+        <p>I am not even sure how much of this intuition can currently be automated. The difficulty of turning experience into reliable reasoning about new training runs may be one obstacle to AI systems improving themselves recursively. Perhaps there is some comfort in that difficulty. At the very least, hard-won expertise in training models provide a moat for new AI startups. It is also one reason I am sceptical of the claim that AI can simply write any software: generating code does not by itself supply the intuition needed to train a model or tune an optimiser. As scientists, though, we should still want to overcome this difficulty. Seeking the truth is part of the ethos of science, and I believe a deeper understanding of learning could help us govern both AI systems and the companies that build them. As Heisenberg reminds us, we should remain open about what understanding might look like while pursuing it with determination. This primer begins in that spirit.</p>
+      </section>
+      <section class="row" aria-labelledby="mickey-mouse-science">
+        <h2 id="mickey-mouse-science" data-english="As Grandma always says, start with the corner pieces" data-singlish="Eh, my ah ma say one hor: jigsaw must start from the corner pieces lah, bodoh.">As Grandma always says, start with the corner pieces</h2>
+        <figure style="max-width: 420px; margin: 1.25em auto 1.5em;">
+          <img src="../learning-dynamics/images/jigsaw-corner-pieces.png" alt="Pink jigsaw puzzle pieces scattered on a gridded cutting mat" width="638" height="480" style="display: block; width: 100%; height: auto;" loading="lazy">
+          <figcaption class="jigsaw-source">Photo: <a href="https://www.facebook.com/groups/jigsawpuzzlelover/posts/2081880195881301/">Michelle Hedley, Jigsaw Puzzle Lovers (24 October 2025)</a>.</figcaption>
+        </figure>
+        <p>When solving a jigsaw puzzle, start with the corner pieces. In science, their counterparts are <em>minimal models</em>—less affectionately called “Mickey Mouse models”, at least among physicists. These deliberately simplified models often isolate an extreme or limiting case to expose a key aspect of the phenomenon we want to understand. They help us find counterexamples that can save us from pursuing a bad idea, disentangle effects that are difficult to separate in a more complex system, and sharpen our thinking. More frankly, they help us focus on the science without getting lost in complicated mathematics, serve as sanity checks (akin to unit tests) for more complex models, and provide useful teaching examples.</p>
+        <p>This approach of using mathematical idealisations to study phenomena has a rich history. Galileo was a pioneering champion of it. He advocated a mathematical approach to nature in <em>The Assayer</em> (1623) and used idealised systems to develop his account of motion in <a href="https://galileoandeinstein.phys.virginia.edu/tns_draft/tns_001to061.html"><em>Two New Sciences</em></a> (1638). By setting aside complications such as friction and air resistance, he could isolate relationships that were difficult to discern in everyday experience. His work helped lay the foundations of kinematics and contributed to the development of the principle of inertia. One could argue that this approach helped set the Scientific Revolution in motion.</p>
+        <p>To my ear, some objections to a science of machine learning echo the doubts raised against Galileo’s new science of Physics. Indeed, to address possible accusations of physics envy, I will explore this in a separate essay. In the spirit of Galileo, I hope this collection can contribute, in a small way, to a scientific revolution in machine learning. My role is chiefly to make the work of researchers far more knowledgeable than I am more accessible. The writing comes in two forms:</p>
+        <ul>
+          <li><strong>Sketches</strong> are written for first-year undergraduates, with the aim of remaining accessible to interested high-school students.</li>
+          <li><strong>Primers</strong> are written for early-stage graduate students, while remaining accessible to senior undergraduates.</li>
+        </ul>
+        <aside class="margin-note"><p>For readers in Singapore, “high school” refers to the JC or polytechnic level; for readers in the UK, it refers to A-level study or its equivalent.</p></aside>
+        <p>I hope these pieces offer useful introductions to the field and encourage readers to ask new questions, develop new ideas, and pursue work of their own.</p>
+      </section>
+    <section class="primer-list" aria-labelledby="series-sketches">
+      <div class="row primer-list-heading"><h2 id="series-sketches">Sketches in this series</h2></div>
+      <div class="row writing-index-item">
+        <h3><a class="essay-link" data-local-index href="../learning-dynamics/">Training Dynamics</a></h3>
+        <p>Figuring out how neural networks learn from data.</p>
+        <a class="more-link" data-local-index href="../learning-dynamics/">Read the Sketch→</a>
+      </div>
+      <div class="row writing-index-item">
+        <h3><a class="essay-link" data-local-index href="../singular-learning-theory/">Singular Learning Theory</a></h3>
+        <p>Figuring out how neural networks generalise to unseen data.</p>
+        <a class="more-link" data-local-index href="../singular-learning-theory/">Read the Sketch →</a>
+      </div>
+    </section>
+  </article>
+</div>
+
+<footer class="appendix"><div class="wrap"><div class="row"><div><h3>Navigate</h3><p><a href="../../index.html">Home</a> · <a href="../../research.html">Research</a> · <a href="../../teaching.html">Teaching</a> · <a href="../../about.html">About</a></p><h3>Elsewhere</h3><p><a href="https://scholar.google.com/citations?user=hepV8W8AAAAJ&amp;hl=en">Google Scholar</a> · <a href="https://github.com/MLdoesML">GitHub</a></p></div></div></div></footer>
+<script src="../../assets/site.js"></script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 
 Open `index.html` for the blog index, or open a post directly:
 
-- [Science of Machine Learning](science-of-machine-learning-primer-series.html) — series preamble and links to its primers.
+- [Science of Machine Learning](science-of-machine-learning-primer-series/) — series preamble and links to its primers.
 - [Training Dynamics](learning-dynamics/) — primer, with images in `learning-dynamics/images/` and downloads in `learning-dynamics/additional-resources/`.
 - [The 4th step](the-fourth-step/) — essay; [Markdown source](the-fourth-step/the-fourth-step.md), with images in `the-fourth-step/images/`.
 - [Towards a frontier-level scientific ecosystem in Singapore — Part I](frontier-scientific-ecosystem-singapore/) — essay, with images in `frontier-scientific-ecosystem-singapore/images/`.
