@@ -1,1 +1,8 @@
 /dist/
+.DS_Store
+/tmp/
+
+# Keep the Odysea tutorial unpublished until the programme ends.
+/blogs/learning-dynamics/tutorial.html
+/blogs/learning-dynamics/additional-resources/learning-dynamics-tutorial.ipynb
+/blogs/learning-dynamics/additional-resources/learning-dynamics-resources.zip

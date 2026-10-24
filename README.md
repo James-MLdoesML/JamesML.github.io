@@ -1,20 +1,13 @@
 # Ming Liang Ang: personal site
 
-A single static page. No build step.
+A static website with no build step. Open `index.html` to preview it locally.
 
-## View it
-Double-click `index.html` to open it in your browser.
+## Folder layout
 
-## Add your photo
-Save a head-and-shoulders photo in this folder as `portrait.jpg`.
-It is cropped to a 4:5 portrait automatically. Until the file exists, the page shows your initials.
+- Root HTML files: Home, Research, Writing, Teaching, and About.
+- `blogs/`: all blog posts, Markdown sources, post images, and downloadable resources. See [the blog guide](blogs/README.md).
+- `assets/`: shared site styles, scripts, favicon, and profile image.
+- `dist/`: ignored deployment copy, configured in `.openai/hosting.json`.
+- `tmp/`: local working files.
 
-## Edit content
-Open `index.html` in any text editor. Each section starts with an `<h2>` heading:
-Research Agenda, Vision and Broader Interests, Selected Publications, Past Ventures, Teaching and Talks.
-The Teaching and Talks entries are placeholders in [square brackets].
-
-## Publish on GitHub Pages
-1. Create a repository named `MLdoesML.github.io` (or any repo, with Pages enabled).
-2. Upload `index.html` and `portrait.jpg` to the root.
-3. In Settings > Pages, set the source to the main branch. The site appears at https://mldoesml.github.io.
+Edit the source files above, then refresh `dist/` with the root HTML pages, `assets/`, and `blogs/` before publishing. Keep blog-specific files inside their post folder under `blogs/`.

@@ -95,6 +95,123 @@ h1 { font-size: 50px; font-weight: 700; line-height: 1.1; color: var(--strong); 
 .essay-title { padding-block: 52px 24px; }
 .essay-title h1 { max-width: 13em; font-size: 44px; }
 .essay-title .description { max-width: 31em; }
+.learning-dynamics-title {
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("../blogs/learning-dynamics/images/learning-dynamics.png") center 45% / cover;
+  padding: clamp(32px, 6vw, 64px);
+  margin-block: 32px 24px;
+}
+.learning-dynamics-title h1 { color: #fff; }
+.learning-dynamics-title .eyebrow { color: rgba(255, 255, 255, 0.85); }
+.learning-dynamics-title .eyebrow a { color: #fff; }
+.learning-dynamics-title .learning-dynamics-tagline { color: rgba(255, 255, 255, 0.9); margin-bottom: 0; }
+.science-of-machine-learning-title {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("../blogs/science-of-machine-learning-primer-series/images/laboratory.png");
+  background-position: center 55%;
+}
+.math-of-machine-learning-title {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("../blogs/math-of-machine-learning-primer-series/images/einstein-blackboard.png");
+  background-position: center 30%;
+}
+.notebook-tabs { display: flex; gap: 28px; border-bottom: 1px solid var(--hair); margin-bottom: 8px; }
+.notebook-tab { appearance: none; font: inherit; font-size: 0.9rem; font-weight: 500; line-height: 1.5; color: var(--quiet); background: transparent; border: 0; border-radius: 0; padding: 12px 0; cursor: pointer; position: relative; }
+.notebook-tab:hover { color: var(--strong); }
+.notebook-tab[aria-selected="true"] { color: var(--strong); }
+.notebook-tab[aria-selected="true"]::after { content: ""; position: absolute; height: 2px; background: var(--strong); bottom: -1px; left: 0; right: 0; }
+.notebook-tab:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
+[role="tabpanel"][hidden] { display: none; }
+.tutorial-placeholder { color: var(--muted); padding-block: 20px 48px; }
+.tutorial-content { padding-top: 24px; }
+.tutorial-content > section { min-width: 0; }
+.tutorial-content code { font-size: 0.85em; overflow-wrap: anywhere; }
+.algorithm-pseudocode { --algorithm-weights: #266f83; --algorithm-gradient: #a94750; --algorithm-rate: #90651b; margin: 1.75rem 0; padding: 24px 28px 18px; border-block: 1px solid var(--hair-strong); background: var(--paper); color: var(--strong); }
+.algorithm-label { display: block; color: var(--quiet); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; }
+.algorithm-pseudocode h3 { margin: 0.35rem 0 1.25rem; font-size: 1.1rem; }
+.algorithm-math { overflow-x: auto; font-size: 0.9em; }
+.algorithm-math mjx-container[display="true"] { text-align: left !important; margin: 0.5rem 0 1.25rem; }
+.algorithm-weights { color: var(--algorithm-weights); }
+.algorithm-comment { width: 100%; box-sizing: border-box; margin: 0 0 1.25rem; color: var(--muted); font-size: 0.95em; line-height: 1.65; }
+.dynamics-analogy { --analogy-state: #266f83; --analogy-landscape: #a94750; --analogy-time: #90651b; margin: 1.75rem 0; }
+.dynamics-equations { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; padding-block: 12px 20px; }
+.dynamics-equation-label { margin: 0 0 1rem; text-align: center; color: var(--strong); font-size: 0.85em; font-weight: 600; }
+.dynamics-equation-label span { display: block; color: var(--quiet); font-weight: 400; font-size: 0.9em; }
+.dynamics-equations mjx-container[display="true"] { margin: 0.75rem 0; overflow-x: auto; overflow-y: hidden; }
+.analogy-state { color: var(--analogy-state); }
+.analogy-landscape { color: var(--analogy-landscape); }
+.analogy-time { color: var(--analogy-time); }
+.dynamics-color-key { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 1.25rem; font-size: 0.78em; line-height: 1.6; }
+.dynamics-derivation, .tutorial-solution { margin: 1.75rem 0; padding-top: 1.25rem; border: 0; border-top: 1px solid var(--hair); border-radius: 0; font-size: 0.92em; }
+.dynamics-derivation > summary, .tutorial-solution > summary { padding: 0; cursor: pointer; color: var(--strong); font-size: inherit; font-weight: 600; background: transparent; }
+.dynamics-derivation > summary:focus-visible, .tutorial-solution > summary:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+.dynamics-derivation-body { padding-top: 1.25rem; }
+.narrative-calculation { margin-block: 1rem; padding-top: 0.9rem; }
+.narrative-calculation + .narrative-calculation { margin-top: 0.75rem; }
+.dynamics-derivation .tutorial-equation { font-size: 1em; }
+.linear-network { --network-a: #266f83; --network-b: #a94750; display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr); align-items: center; gap: 4px 20px; margin: 1.75rem 0; }
+.linear-network-diagram { display: block; width: 100%; height: auto; }
+.network-edge { fill: none; stroke-width: 2.5; }
+.network-edge-a { stroke: var(--network-a); }
+.network-edge-b { stroke: var(--network-b); }
+.network-fill-a { fill: var(--network-a); }
+.network-fill-b { fill: var(--network-b); }
+.network-a { color: var(--network-a); }
+.network-b { color: var(--network-b); }
+.network-node { fill: var(--paper); stroke: var(--hair-strong); stroke-width: 1.5; }
+.network-value, .network-weight { font-family: var(--math); font-style: italic; font-size: 24px; text-anchor: middle; }
+.network-value { fill: var(--strong); }
+.network-node-label { fill: var(--muted); font-family: var(--sans); font-size: 14px; text-anchor: middle; }
+.linear-network-equation { font-size: 1.1em; overflow-x: auto; }
+.linear-network figcaption { grid-column: 1 / -1; color: var(--muted); font-size: 0.8em; text-align: center; }
+html[data-theme="dark"] .linear-network { --network-a: #80c5d2; --network-b: #e9a0a7; }
+@media (max-width: 500px) { .linear-network { grid-template-columns: 1fr; gap: 0; } .linear-network-equation mjx-container[display="true"] { margin: 0.5rem 0 1rem; } }
+html[data-theme="dark"] .dynamics-analogy { --analogy-state: #80c5d2; --analogy-landscape: #e9a0a7; --analogy-time: #d9bd78; }
+@media (max-width: 500px) { .dynamics-equations { gap: 12px; font-size: 0.8em; } }
+.algorithm-gradient { color: var(--algorithm-gradient); }
+.algorithm-rate { color: var(--algorithm-rate); }
+.algorithm-legend { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin: 0; padding-top: 12px; border-top: 1px solid var(--hair); font-size: 0.76rem; }
+html[data-theme="dark"] .algorithm-pseudocode { --algorithm-weights: #80c5d2; --algorithm-gradient: #e9a0a7; --algorithm-rate: #d9bd78; }
+@media (max-width: 600px) { .algorithm-pseudocode { padding: 20px 12px 16px; } .algorithm-math { font-size: 0.78em; } }
+.cite-this-primer { border-top: 1px solid var(--hair); margin-top: 32px; padding-top: 20px; padding-bottom: 56px; }
+.cite-this-primer h2 { margin: 0 0 12px; padding-bottom: 12px; }
+.citation-header { display: flex; justify-content: space-between; align-items: center; padding: 8px 14px; border: 1px solid var(--hair); border-bottom: 0; border-radius: 4px 4px 0 0; background: var(--appendix); color: var(--muted); font-size: 0.82em; }
+.citation-header button { appearance: none; border: 0; background: transparent; color: var(--link); font: inherit; font-weight: 600; cursor: pointer; }
+.citation-header button:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+#primer-bibtex { margin: 0; padding: 16px; border: 1px solid var(--hair); border-radius: 0 0 4px 4px; overflow-x: auto; background: var(--frame); color: var(--strong); font-size: 0.78em; line-height: 1.6; }
+.tutorial-equation { font-family: var(--math); font-size: 1.15em; padding: 12px 0; margin-bottom: 1em; overflow-x: auto; }
+.tutorial-note { margin: 1.5em 0; padding: 4px 0 4px 20px; border-left: 2px solid var(--hair-strong); color: var(--muted); }
+.tutorial-release-notice { margin: 1.25rem 0 1.5rem; padding: 16px 20px; border-left: 3px solid #b43e46; background: #fff2f2; color: #982d35; }
+.row > .tutorial-release-notice { grid-column: 1; grid-row: auto; width: auto; min-width: 0; box-sizing: border-box; }
+.tutorial-release-notice p { margin: 0; font-size: 0.92em; line-height: 1.65; }
+html[data-theme="dark"] .tutorial-release-notice { border-color: #e79b9f; background: #301c20; color: #f0b1b6; }
+.tutorial-note p { margin: 0; }
+.learning-definition { --definition-parameters: #266f83; --definition-predictions: #a94750; margin: 1.75rem 0 2rem; padding: 24px 0; border-block: 1px solid var(--hair); }
+.definition-mapping { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 16px; text-align: center; }
+.definition-symbol { font-size: 2rem; line-height: 1.4; }
+.definition-question { display: inline-block; margin-left: 0.2em; font-family: var(--math); font-size: 1.4em; vertical-align: -0.04em; }
+.learning-definition .definition-mapping p { margin: 0.4rem 0 0; font-size: 0.8em; font-weight: 500; }
+.definition-parameters { color: var(--definition-parameters); }
+.definition-predictions { color: var(--definition-predictions); }
+.definition-arrow { color: var(--quiet); font-family: var(--math); font-size: 2rem; padding-bottom: 1.4rem; }
+.learning-definition figcaption { max-width: 32em; margin: 1.25rem auto 0; color: var(--muted); font-size: 0.9em; line-height: 1.6; text-align: center; }
+html[data-theme="dark"] .learning-definition { --definition-parameters: #80c5d2; --definition-predictions: #e9a0a7; }
+@media (max-width: 500px) { .definition-mapping { gap: 8px; } .definition-symbol { font-size: 1.6rem; } .learning-definition .definition-mapping p { font-size: 0.72em; } }
+.learning-outcomes-figure { max-width: 648px; margin: 2rem auto; }
+.learning-outcomes-figure img { display: block; width: 100%; height: auto; }
+.learning-outcomes-figure figcaption { color: var(--quiet); font-size: 0.8em; line-height: 1.45; margin-top: 0.5rem; }
+.jigsaw-source { color: var(--quiet); font-size: 0.8em; line-height: 1.45; margin-top: 0.5rem; }
+.solution-label { margin-left: 6px; font-weight: 400; color: var(--quiet); }
+.solution-body { padding: 1.25rem 0 0; min-width: 0; }
+.solution-body .margin-annotated > .margin-note { position: static; width: auto; border-left: 2px solid var(--hair); padding-left: 14px; margin-block: 16px; }
+@media (min-width: 1080px) {
+  .solution-body .sequence-convergence-note > .margin-note { position: absolute; left: calc(100% + 48px); top: 0; width: 120px; border: 0; padding: 0; margin: 0; }
+}
+.solution-body ul { padding-left: 22px; }
+.solution-body li { margin-bottom: 10px; }
+.solution-body .tutorial-equation { font-size: 1em; }
+.solution-table { overflow-x: auto; margin-bottom: 20px; }
+.solution-table table { border-collapse: collapse; width: 100%; font-size: 0.85em; }
+.solution-table th, .solution-table td { padding: 8px 12px; border-bottom: 1px solid var(--hair); text-align: left; vertical-align: top; }
+.solution-controls { margin: 24px 0 12px; }
+.solution-controls button { appearance: none; padding: 0; border: 0; background: transparent; color: var(--link); font: inherit; font-size: 0.85em; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
 .eyebrow { margin: 0 0 8px; color: var(--quiet); font-size: 0.76em; font-weight: 650; letter-spacing: 0.08em; text-transform: uppercase; }
 
 .byline { border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); padding-block: 18px; }
@@ -103,6 +220,8 @@ h1 { font-size: 50px; font-weight: 700; line-height: 1.1; color: var(--strong); 
 .byline p { margin: 0; color: var(--strong); }
 
 article { padding-block: 32px 24px; }
+.primer-series-article { padding-top: 24px; }
+.primer-series-article > section:first-child > h2 { margin-top: 0; }
 p { margin: 0 0 1em; }
 h2 { font-size: 24px; font-weight: 600; line-height: 1.25; color: var(--strong); margin: 2.4rem 0 1.4rem; padding-bottom: 1rem; border-bottom: 1px solid var(--hair); }
 @media (min-width: 1024px) { h2 { font-size: 30px; } }
@@ -114,11 +233,18 @@ h3 { font-size: 18px; font-weight: 700; line-height: 1.4; color: var(--strong); 
 .pull-quote p { margin-bottom: 0.55em; font-family: var(--math); font-size: 1.05em; font-style: italic; }
 .pull-quote cite { display: block; color: var(--quiet); font-size: 0.82em; font-style: normal; }
 .more-link { display: inline-block; margin-top: 0.25em; font-size: 0.92em; font-weight: 650; }
+.primer-list-button { display: inline-block; margin-top: 1rem; padding: 0.65em 1em; border: 1px solid var(--hair-strong); border-radius: 6px; background: var(--paper); color: var(--link); font-size: 0.92em; font-weight: 650; text-decoration: none; }
+.primer-list-button:hover { border-color: var(--link); text-decoration: underline; text-underline-offset: 3px; }
+.primer-list-button:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
 .essay-meta { margin: 0 0 0.55rem; color: var(--quiet); font-size: 0.76em; font-weight: 650; letter-spacing: 0.06em; text-transform: uppercase; }
 .essay-link { color: inherit; }
 .essay-link:hover { color: var(--link); }
 .writing-index-item { padding-bottom: 2.2rem; border-bottom: 1px solid var(--hair); }
 .writing-index-item h2 { margin-top: 0; border-bottom: 0; padding-bottom: 0; }
+.primer-list { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--hair-strong); }
+.primer-list-heading h2 { margin: 0; padding-bottom: 1rem; border-bottom: 1px solid var(--hair); }
+.primer-list .writing-index-item { padding-top: 1.5rem; }
+.primer-list .writing-index-item h3 { margin-top: 0; }
 .writing-page { padding-top: 18px; }
 .writing-section { padding-block: 14px 22px; }
 .section-heading { padding-bottom: 0.35rem; }
@@ -146,6 +272,10 @@ aside { font-size: 12.5px; line-height: 1.5; color: var(--muted); margin: 0 0 1.
 aside b { color: var(--strong); font-weight: 600; }
 .margin-note .note-quote { margin: 0.7em 0 0.45em; font-family: var(--math); font-style: italic; }
 .margin-note cite { display: block; color: var(--quiet); font-style: normal; }
+@media (min-width: 1080px) {
+  .margin-annotated { position: relative; }
+  .margin-annotated > .margin-note { position: absolute; left: calc(100% + 48px); top: 0; width: 120px; }
+}
 @media (min-width: 1080px) {
   .pinned-writing > .margin-quote { grid-row: 2 / span 20; padding-top: 0.15rem; }
 }

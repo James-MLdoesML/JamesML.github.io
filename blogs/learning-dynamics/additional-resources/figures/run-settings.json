@@ -1,0 +1,48 @@
+{
+  "transition_steps": 40000,
+  "transition_points": 81,
+  "stability_steps": 12000,
+  "stability_shape": [
+    181,
+    81
+  ],
+  "initial_weights": [
+    0.1,
+    0.11
+  ],
+  "stability_display": "Analytic stable-region boundaries; numerical oscillation/divergence observations",
+  "raw_classification_plot": "step-size-phase-diagram-finite-budget.png",
+  "terminal_window": 300,
+  "gradient_tolerance": 1e-05,
+  "weight_range_tolerance": 1e-05,
+  "divergence_cutoff": 1000000.0,
+  "classification_counts": [
+    7549,
+    899,
+    2923,
+    3290
+  ],
+  "numpy": "2.5.4",
+  "matplotlib": "3.11.2",
+  "quick": false,
+  "transition_eta": 0.01,
+  "transition_gamma_range": [
+    0.0,
+    0.8
+  ],
+  "transition_initialisations": {
+    "N2": 0.1,
+    "N3_high": 1.0,
+    "N3_cold": 0.3
+  },
+  "stability_gamma_range": [
+    0.0,
+    0.8
+  ],
+  "stability_eta_range": [
+    0.02,
+    1.6
+  ],
+  "learned_output_cutoff": 0.0001,
+  "collapse_weight_norm_cutoff": 0.0001
+}
