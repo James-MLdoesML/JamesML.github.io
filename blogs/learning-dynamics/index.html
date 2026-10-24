@@ -53,9 +53,12 @@ window.MathJax = {
 
   <article aria-label="Training Dynamics" style="padding-top: 12px;">
     <div id="notes-panel">
+    <div class="row">
+      <p class="prerequisites-note"><strong>Prerequisites.</strong> Algebra up to quadratic equations and basic calculus. The proof in <a href="#all-models-are-wrong">Section 3</a> uses a little real analysis, but you can skip it and still follow the main ideas.</p>
+    </div>
     <section class="row" aria-labelledby="what-is-learning-dynamics">
-      <h2 id="what-is-learning-dynamics">What is training dynamics about?</h2>
-        <p>One idea gaining traction in efforts to build a science of AI is to study how models change as they learn (i.e. their training dynamics). Recent papers make this case explicitly: <a href="https://proceedings.mlr.press/v306/biderman26a.html"><em>Position: Don’t Just “Fix it in Post”: A Science of AI Must Study Training Dynamics</em></a> from ICML 2026 argues that understanding model behaviour requires studying the training processes that produce it, while <a href="https://arxiv.org/html/2604.21691v1"><em>There Will Be a Scientific Theory of Deep Learning</em></a> outlines an emerging “mechanics” of learning, built around quantitative predictions of how neural networks evolve during training.</p>
+      <h2 id="what-is-learning-dynamics">1. What is training dynamics about?</h2>
+        <p>One idea gaining traction in efforts to build a science of AI is to study how models change as they learn (i.e., their training dynamics). Recent papers make this case explicitly: <a href="https://proceedings.mlr.press/v306/biderman26a.html"><em>Position: Don’t Just “Fix it in Post”: A Science of AI Must Study Training Dynamics</em></a> from ICML 2026 argues that understanding model behaviour requires studying the training processes that produce it, while <a href="https://arxiv.org/html/2604.21691v1"><em>There Will Be a Scientific Theory of Deep Learning</em></a> outlines an emerging “mechanics” of learning, built around quantitative predictions of how neural networks evolve during training.</p>
         <p>So what is training dynamics? Broadly, it is the study of how a model’s parameters, representations, and predictions evolve during training, and how that evolution depends on the data, architecture, and learning algorithm. A useful formulation, in my opinion, comes from <a href="#ref-ren-sutherland-2025">Ren and Sutherland’s (2025)</a> <em>Learning Dynamics of LLM Finetuning</em>, which received an <a href="https://blog.iclr.cc/2025/04/22/announcing-the-outstanding-paper-awards-at-iclr-2025/">Outstanding Paper Award at ICLR 2025</a>. In particular, they frame training dynamics as studying:</p>
         <figure class="learning-definition" aria-labelledby="training-dynamics-question">
           <div class="definition-mapping">
@@ -73,7 +76,7 @@ window.MathJax = {
         </figure>
 
         <p>To study training dynamics, we first introduce gradient descent, the algorithm underlying many widely used methods for training neural networks. We measure how well a network fits the training data using an objective function, often called the loss function. A lower loss indicates a better fit, and the goal of gradient descent is to minimise it.</p>
-        <p>Ideally, we would find the minimiser analytically, much as we solve familiar calculus problems about maximising an area or minimising a volume. For neural networks, however, the objective is generally too complex to solve this way. Instead, gradient descent improves the parameters through a sequence of small updates, as shown in the pesudo code below.</p>
+        <p>Ideally, we would find the minimiser analytically, much as we solve familiar calculus problems about maximising an area or minimising a volume. For neural networks, however, the objective is generally too complex to solve this way. Instead, gradient descent improves the parameters through a sequence of small updates, as shown in the pseudocode below.</p>
         <figure class="algorithm-pseudocode" aria-labelledby="gradient-descent-algorithm">
           <figcaption>
             <span class="algorithm-label">Algorithm · Full-batch</span>
@@ -100,7 +103,7 @@ window.MathJax = {
           </div>
           <p class="algorithm-legend"><span class="algorithm-weights">\(\theta\) weights</span><span class="algorithm-gradient">\(g\) gradient</span><span class="algorithm-rate">\(\eta\) learning rate</span></p>
         </figure>
-        <p>As seen in the pesudo code above, at each step of the loop, gradient descent updates the network’s weights \(\theta_k\) by moving in the direction opposite to the gradient of the training loss, \(\nabla L_{\mathcal{D}}(\theta_k)\). The step size \(\eta\) controls the step size:</p>
+        <p>As seen in the pseudocode above, at each step of the loop, gradient descent updates the network’s weights \(\theta_k\) by moving in the direction opposite to the gradient of the training loss, \(\nabla L_{\mathcal{D}}(\theta_k)\). The learning rate \(\eta\) controls the step size:</p>
         <div class="tutorial-equation">\[\theta_{k+1} = \theta_k - \eta\,\nabla L_{\mathcal{D}}(\theta_k)\]</div>
         <div class="margin-annotated">
         <p>You can think of the neural network’s objective function \(L_{\mathcal{D}}(\theta)\) as a landscape. The negative gradient points in the direction of steepest descent. Gradient descent takes a small step in that direction, recalculates the gradient at the new position, and repeats. This is very much like a ball rolling down a hill.</p>
@@ -151,13 +154,14 @@ window.MathJax = {
               =-\nabla V(\mathbf{r}),
             \]</div>
             <p>where the last equality uses the idealised model with inertia neglected.</p>
+            </div>
           </details>
         </figure>
-        <p>This continuous-time description of gradient descent is called <strong>gradient flow</strong>. Throughout this sketch introduction to the topic, gradient flow will serve as our “Mickey Mouse” model of the training algorithm.</p>
+        <p>This continuous-time description of gradient descent is called <strong>gradient flow</strong>. Throughout this introductory sketch, gradient flow will serve as our “Mickey Mouse” model of the training algorithm.</p>
 
     </section>
     <section class="row" aria-labelledby="solve-this-equation">
-      <h2 id="solve-this-equation" data-english="Even, yo mama can solve this neural network" data-singlish="This equation your ah ma also can solve leh. You can or not?">Even, yo mama can solve this neural network equation.</h2>
+      <h2 id="solve-this-equation" data-english="2. Even yo mama can solve this neural network equation" data-singlish="2. This equation your ah ma also can solve leh. You can or not?">2. Even yo mama can solve this neural network equation</h2>
       <p>Gradient flow alone does not make a neural network’s training dynamics easy to understand with pen and paper, so we will simplify the network too. Throughout these notes, we will consider a network with just two layers, one hidden unit, and no nonlinear activation:</p>
       <figure class="linear-network" aria-label="A two-layer linear neural network and its equation">
         <svg class="linear-network-diagram" viewBox="0 0 420 160" role="img" aria-labelledby="linear-network-title linear-network-description">
@@ -211,10 +215,10 @@ window.MathJax = {
         <p>For example, the objective \(L_{\mathcal{D}}\) gives us no reason to prefer \((1,1)\) over \((2,\tfrac12)\), or any other solution on the hyperbola \(ab=1\). When training reaches a zero-loss solution, what determines which one it finds? The preference among equally good solutions induced by the initialisation and the training algorithm (gradient flow in this case) is known as the <strong>implicit bias</strong> of training.</p>
         <aside class="margin-note"><p>The curve \(ab=1\) forms the network’s <strong>solution manifold</strong>: a continuous set of equally good solutions.</p></aside>
       </div>
-      <p>To understand this phenomenon of implict bias, we begin with the following observation.</p>
+      <p>To understand this phenomenon of implicit bias, we begin with the following observation.</p>
       <section aria-labelledby="rescaling-symmetry">
-        <h3 id="rescaling-symmetry">Key Observation: The network has rescaling symmetry</h3>
-        <p>If we multiply one weight by \(\lambda\) and divide the other by \(\lambda\):</p>
+        <h3 id="rescaling-symmetry">2.1. Key Observation: The network has rescaling symmetry</h3>
+        <p>Consider multiplying one weight by \(\lambda\) and dividing the other by \(\lambda\):</p>
         <div class="tutorial-equation">\[(a,b)\longmapsto\left(\lambda a,\frac{b}{\lambda}\right),\qquad \lambda&gt;0.\]</div>
         <div class="margin-annotated">
           <p>The product \(ab\) does not change, so neither does the network’s output or its loss. In other words, we can increase the magnitude of one layer’s weight and compensate by decreasing the other’s, without changing the function the network computes. This simple symmetry has far-reaching consequences.</p>
@@ -227,9 +231,10 @@ window.MathJax = {
 <summary>Show why rescaling symmetry gives a conserved quantity</summary>
 <div class="solution-body">
 <p>Differentiating \(L_{\mathcal{D}}(\lambda a,b/\lambda)=L_{\mathcal{D}}(a,b)\) with respect to \(\lambda\) and evaluating at \(\lambda=1\) gives:</p>
-        <div class="margin-annotated">
+        <div class="margin-annotated partial-differentiation-note">
           <div class="tutorial-equation">\[\left.\frac{d}{d\lambda}L_{\mathcal{D}}\!\left(\lambda a,\frac{b}{\lambda}\right)\right|_{\lambda=1}=a\frac{\partial L_{\mathcal{D}}}{\partial a}-b\frac{\partial L_{\mathcal{D}}}{\partial b}=0.\]</div>
-          <aside class="margin-note"><p>Physicists often differentiate a continuous symmetry at the identity to expose its infinitesimal constraint—the starting move in many symmetry arguments, including Noether’s theorem.</p></aside>
+          <aside class="margin-note partial-differentiation-aside"><p><strong>Partial differentiation.</strong> When a function depends on several variables, differentiate with respect to one while holding the others fixed. Here, \(\partial L_{\mathcal{D}}/\partial a\) tells us how the loss changes as \(a\) varies, treating \(b\) as a constant.</p></aside>
+          <aside class="margin-note"><p>Physicists often differentiate a continuous symmetry at the identity to expose its infinitesimal constraint—the starting move in many symmetry arguments, including the famous Noether’s theorem.</p></aside>
         </div>
         <p>Under gradient flow, \(\dot a=-\partial L_{\mathcal{D}}/\partial a\) and \(\dot b=-\partial L_{\mathcal{D}}/\partial b\), so we get</p>
         <div class="tutorial-equation">\[\frac{d}{dt}(a^2-b^2)=2a\dot a-2b\dot b=-2\left(a\frac{\partial L_{\mathcal{D}}}{\partial a}-b\frac{\partial L_{\mathcal{D}}}{\partial b}\right)=0.\]</div>
@@ -272,22 +277,22 @@ window.MathJax = {
         <p>Since \(1+s^2&gt;0\), this always pushes \(s\) towards zero. Both weights approach the origin, where the loss is \(\tfrac12\). Starting at the origin itself leaves the network there.</p>
 </div>
 </details>
-        <p>Putting everything together, we can make the following diagram below. The diagram below is called a <strong>phase portrait</strong>: it shows the training trajectories and their long-term outcomes for our simple learning problem. The picture, thus, makes the implicit bias visible.</p>
+        <p>Putting everything together, we can draw the diagram below. This is called a <strong>phase portrait</strong>: it shows the training trajectories and their long-term outcomes for our simple learning problem. The picture thus makes the implicit bias visible.</p>
       </section>
       <figure class="learning-outcomes-figure">
         <img src="images/learning-dynamics-phase-portrait.png" alt="Phase portrait of gradient flow for y = abx: trajectories above a = -b reach positive solutions on ab = 1; those below reach negative solutions; trajectories on a = -b flow into the saddle at the origin." width="1640" height="1720" loading="lazy">
       </figure>
-      <p>Each point in the diagram represents a pair of weights \((a,b)\). Choose an initialisation and follow the arrows: they show how gradient flow moves the weights, with each trajectory constrained by \(a^2-b^2=c\). The black curves mark \(ab=1\), where the loss is zero and training is stationary.</p>
+      <p>Each point in the diagram represents a pair of weights \((a,b)\). By choosing an initialisation and following the arrows, we can see how the gradient flow moves the weights, with each trajectory constrained by \(a^2-b^2=c\). The black curves mark \(ab=1\), where the loss is zero and training is stationary.</p>
       <p>The colours show which branch training reaches. Initialisations in the blue region, where \(a_0+b_0&gt;0\), converge to positive weights; those in the orange region, where \(a_0+b_0&lt;0\), converge to negative weights. Both branches compute the same function, \(f(x)=x\). The red line \(a=-b\) separates these regions: its arrows lead towards the origin, where learning fails. A start arbitrarily close to this line, but not exactly on it, eventually reaches a zero-loss solution.</p>
      </section>
     <section class="row" aria-labelledby="all-models-are-wrong">
-      <h2 id="all-models-are-wrong">All models are wrong, but we can make them less wrong</h2>
+      <h2 id="all-models-are-wrong">3. All models are wrong, but we can make them less wrong</h2>
       <section aria-labelledby="finite-step-sizes">
-        <h3 id="finite-step-sizes">How about finite step sizes?</h3>
+        <h3 id="finite-step-sizes">3.1. How about finite step sizes?</h3>
         <p>With finite step sizes, the conservation law is broken. Writing the residual as \(r_t=a_tb_t-1\), the same calculation as above gives</p>
         <div class="tutorial-equation">\[a_{t+1}^2-b_{t+1}^2=\left(1-\eta^2r_t^2\right)(a_t^2-b_t^2).\]</div>
         <p>To make matters worse, let’s consider the case where the step size is too large.</p>
-        <p>Choose \(\eta=1\) and \(a_0=b_0=2\). Then, use pen and paper to compute the first few iterations:</p>
+        <p>Choose \(\eta=1\) and \(a_0=b_0=2\). Then use pen and paper to compute the first few iterations:</p>
         <div class="tutorial-equation">\[
           \qquad 2\longmapsto-4\longmapsto56\longmapsto-175504\longmapsto\cdots.
         \]</div>
@@ -295,10 +300,10 @@ window.MathJax = {
         <p>Thankfully, for any fixed initialisation, a sufficiently small positive step size ensures that the weights converge. Unless \(a_0=-b_0\), we can even show that they converge to a global minimum. We can also derive rates describing how quickly they approach it. With finite steps, the imbalance is no longer necessarily conserved. However, for a sufficiently small step size, we can replace the conservation equality with an inequality: the magnitude of the imbalance either remains unchanged or decreases.</p>
         <div class="margin-annotated">
           <p>These results are striking because the objective is non-convex, yet the algorithm uses a constant learning rate. Many introductory convergence proofs assume convexity, and some also require diminishing step sizes, leaving the setting discussed here outside their scope. Non-convexity makes global guarantees harder to establish, but this example shows that they can still be within reach. A fuller discussion of non-convex optimisation deserves a post of its own.</p>
-          <aside class="margin-note"><p><strong>Convexity.</strong> Think of an upward-opening quadratic such as \(x^2\). Convex functions share its useful property that every local minimum is global, but need not be quadratic. A more useful property of convex functions is that the line segment joining any two points on the graph lies on or above the graph. We shall see more in other posts.</p></aside>
+          <aside class="margin-note"><p><strong>Convexity.</strong> Think of an upward-opening quadratic such as \(x^2\). Convex functions share its useful property that every local minimum is global, but need not be quadratic. A more useful property of convex functions is that the line segment joining any two points on the graph lies on or above the graph. We shall see more of this in other posts.</p></aside>
         </div>
   <details class="tutorial-solution narrative-calculation">
-          <summary>Show proof of convergence (Warning: advanced)</summary>
+          <summary>Show the proof of convergence (warning: advanced)</summary>
           <div class="solution-body">
             <p><strong>1. Take small enough steps.</strong> Choose</p>
             <div class="tutorial-equation">\[0&lt;\eta&lt;\frac{1}{4(a_0^2+b_0^2+2)}.\]</div>
@@ -326,8 +331,8 @@ window.MathJax = {
          </section>
     </section>
     <section class="row" aria-labelledby="please-do-your-homework">
-      <h2 id="please-do-your-homework" data-english="Conclusion and also please do your homework" data-singlish="Oi remember do homework">Conclusion and also please do your homework</h2>
-      <p>In conclusion, we see how a simple toy model can exhibit many interesting phenomena. These are small, tractable versions of phenomena that also arise in much larger neural networks. I hope the example has sparked your imagination about what a simple model can reveal, and given you a feel for how researchers study training dynamics.</p>
+      <h2 id="please-do-your-homework" data-english="4. Conclusion and also please do your homework" data-singlish="4. Oi remember do homework">4. Conclusion and also please do your homework</h2>
+      <p>In conclusion, studying the training dynamics of our simple toy model has taught us how to identify conservation laws, understand when they break, and uncover the implicit bias of training. These are small, tractable versions of phenomena that also arise in much larger neural networks. Understanding how such behaviour emerges from the interaction between data, model structure, and the optimisation algorithm is what training dynamics is about. I hope this example has sparked your imagination about what a simple model can reveal and given you a feel for how researchers study training dynamics.</p>
       <aside class="tutorial-release-notice" id="tutorial-release-note" aria-label="A note on the tutorial">
         <p><strong>A note on the tutorial.</strong> For the benefit of Odysea students, I will release the tutorial publicly only after the programme ends. Some of the material may help students develop ideas for their research projects, so I would like them to have the opportunity to explore it first.</p>
       </aside>
@@ -339,7 +344,7 @@ window.MathJax = {
         </figure>
         <aside class="margin-note"><p><strong>Critical slowing down.</strong> As \(\gamma\to\tfrac12\), the gradient-flow relaxation timescale diverges. At the critical point, convergence is algebraic rather than exponential. Finite-duration simulations therefore cannot resolve the boundary arbitrarily closely; the sharp boundary here uses the analytic prediction.</p></aside>
       </div>
-      <p>As the decay strength crosses a critical value, the learned output shrinks to zero and the network stops fitting \(y=x\). The decay strength plays a role rather like temperature in a material: changing one control parameter can change the system’s qualitative behaviour. At greater depth, the transition becomes more even more striking. The tutorial leads you through both results. This is a glimpse of how much structure this small model contains. I hope you will find it a useful starting point for your own exploration of training dynamics.</p>
+      <p>As the decay strength crosses a critical value, the learned output shrinks to zero and the network stops fitting \(y=x\). The decay strength plays a role rather like temperature in a material: changing one control parameter can change the system’s qualitative behaviour. At greater depth, the transition becomes even more striking. The tutorial leads you through both results. This is a glimpse of how much structure this small model contains. I hope you will find it a useful starting point for your own exploration of training dynamics.</p>
     </section>
     <section class="row" aria-labelledby="notes-references">
       <h2 id="notes-references">References</h2>
@@ -353,8 +358,8 @@ window.MathJax = {
     </section>
     </div>
     <section class="row cite-this-primer" aria-labelledby="cite-this-primer">
-      <h2 id="cite-this-primer">Cite this primer</h2>
-      <p>If this primer is useful in your work, you can cite it with this BibTeX entry.</p>
+      <h2 id="cite-this-primer">Cite this sketch</h2>
+      <p>If this sketch is useful in your work, you can cite it with this BibTeX entry.</p>
       <div class="citation-header"><span>BibTeX</span><button type="button" id="copy-primer-citation" aria-label="Copy BibTeX citation">Copy</button></div>
       <pre id="primer-bibtex"><code>@misc{ang2026learningdynamics,
   author = {Ang, James Ming Liang},

@@ -202,7 +202,8 @@ html[data-theme="dark"] .learning-definition { --definition-parameters: #80c5d2;
 .solution-body { padding: 1.25rem 0 0; min-width: 0; }
 .solution-body .margin-annotated > .margin-note { position: static; width: auto; border-left: 2px solid var(--hair); padding-left: 14px; margin-block: 16px; }
 @media (min-width: 1080px) {
-  .solution-body .sequence-convergence-note > .margin-note { position: absolute; left: calc(100% + 48px); top: 0; width: 120px; border: 0; padding: 0; margin: 0; }
+  .solution-body .sequence-convergence-note > .margin-note,
+  .solution-body .partial-differentiation-note > .partial-differentiation-aside { position: absolute; left: calc(100% + 48px); top: 0; width: 120px; border: 0; padding: 0; margin: 0; }
 }
 .solution-body ul { padding-left: 22px; }
 .solution-body li { margin-bottom: 10px; }
@@ -220,6 +221,7 @@ html[data-theme="dark"] .learning-definition { --definition-parameters: #80c5d2;
 .byline p { margin: 0; color: var(--strong); }
 
 article { padding-block: 32px 24px; }
+.prerequisites-note { margin: 0.5rem 0 1.5rem; color: var(--muted); font-size: 0.88em; line-height: 1.6; }
 .primer-series-article { padding-top: 24px; }
 .primer-series-article > section:first-child > h2 { margin-top: 0; }
 p { margin: 0 0 1em; }

@@ -26,3 +26,9 @@
 - [x] Re-derive exact recurrences, divergence, and curvature criteria.
 - [x] Check the research attribution and correct overstatements.
 - [x] Verify the revised section and refresh the deployment copy.
+
+# Training Dynamics grammar pass
+
+- [x] Review the full article and correct grammar while preserving its voice.
+- [x] Check that equations, links, and structure are preserved.
+- [x] Refresh the local deployment copy.
