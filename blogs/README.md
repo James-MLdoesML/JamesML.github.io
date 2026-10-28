@@ -2,6 +2,7 @@
 
 - [Science of Deep Learning](science-of-machine-learning-primer-series/) — preamble and taster list.
 - [Math of Deep Learning](math-of-machine-learning-primer-series/) — mathematics series.
+- [Practice of Deep Learning](practice-of-deep-learning/) — practical guidance on training and interpreting neural networks.
 - [Training Dynamics](learning-dynamics/) — taster, with illustrations and public exports in `images/`, animation sources in `animations/`, and resources in `additional-resources/`.
 - [Singular Learning Theory](singular-learning-theory/) — forthcoming taster.
 - [The 4th step](the-fourth-step/) — essay and [Markdown source](the-fourth-step/the-fourth-step.md).

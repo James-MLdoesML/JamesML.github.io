@@ -8,5 +8,10 @@
     "title": "Math of Deep Learning",
     "tagline": "The mathematical foundations of deep learning.",
     "category": "Deep Learning"
+  },
+  "practice": {
+    "title": "Practice of Deep Learning",
+    "tagline": "Practical guidance on training and interpreting neural networks—where theory helps and where it falls short.",
+    "category": "Deep Learning"
   }
 }

@@ -130,3 +130,8 @@
 - [x] Centralize series metadata and add an automatic static-site build.
 - [x] Add navigation, fragment, image and download checks plus a generated sitemap.
 - [x] Build, verify all pages and document the editing workflow.
+
+# Practice of Deep Learning
+
+- [x] Add the series with a concise practical tagline and a landing page.
+- [x] Refresh the build and verify navigation and the sitemap (18 pages, 281 links/assets).
