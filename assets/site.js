@@ -155,6 +155,6 @@ showMoreButtons.forEach((button) => {
     button.setAttribute("aria-expanded", String(!expanded));
     controlledElements.forEach((element) => { element.hidden = expanded; });
     button.querySelector("span:first-child").textContent = expanded ? "Show more" : "Show less";
-    button.querySelector(".show-more-icon").textContent = expanded ? "→" : "↑";
+    button.querySelector(".show-more-icon").textContent = expanded ? "↓" : "↑";
   });
 });
