@@ -1,0 +1,12 @@
+{
+  "science": {
+    "title": "Science of Deep Learning",
+    "tagline": "From alchemy to a science of deep learning.",
+    "category": "Deep Learning"
+  },
+  "math": {
+    "title": "Math of Deep Learning",
+    "tagline": "The mathematical foundations of deep learning.",
+    "category": "Deep Learning"
+  }
+}

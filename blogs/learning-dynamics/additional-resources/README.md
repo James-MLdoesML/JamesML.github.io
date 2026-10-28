@@ -91,7 +91,7 @@ Checks compare analytical gradients with finite differences, include zero weight
   title = {Training Dynamics},
   year = {2026},
   month = oct,
-  note = {Science of Machine Learning: Primer Series},
+  note = {Science of Deep Learning: Primer Series},
   url = {https://jamesmldoesml.github.io/blogs/learning-dynamics/}
 }
 ~~~

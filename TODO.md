@@ -114,7 +114,19 @@
 - [x] Add Cambridge events and institution filtering with original source links. Imported 97 distinct listings into SQLite: 63 Computer Science and 34 Engineering.
 - [x] Verify frontend rendering, saving and source coverage. Nine database tests pass; live Cambridge filter and official detail links verified. All 11 existing saved event records unchanged.
 
-# Science of Machine Learning sources
+# Science of Deep Learning sources
 
 - [x] Add linked footnotes for Rahimi’s talk and LeCun’s response.
 - [x] Verify footnote anchors, backlinks and timestamp URLs; refresh the deployment copy.
+
+# Deep Learning series names
+
+- [x] Rename the Science and Math series across site titles, descriptions and citations.
+- [x] Verify naming consistency and preserve existing URLs.
+
+# Consistent site structure
+
+- [x] Standardize article folders while retaining legacy redirects and public media paths.
+- [x] Centralize series metadata and add an automatic static-site build.
+- [x] Add navigation, fragment, image and download checks plus a generated sitemap.
+- [x] Build, verify all pages and document the editing workflow.

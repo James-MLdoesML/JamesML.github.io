@@ -36,3 +36,5 @@
 - Writing-page prefaces use a black “Preface” section heading, gray “Preface Part I” and “Preface Part II” labels, and tight label-to-title spacing.
 
 - Keep preface labels close to titles, but use the Primer Series article spacing (1.9rem above subsequent entries) between preface articles.
+
+- When renaming the deep-learning series, update repeated category labels and taglines on Writing, the blog index and each series page; these static HTML pages do not share content automatically.

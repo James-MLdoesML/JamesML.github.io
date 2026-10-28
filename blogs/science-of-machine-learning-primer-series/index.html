@@ -12,8 +12,8 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Science of Machine Learning. A primer series by James Ming Liang Ang.">
-<title>Science of Machine Learning · James Ming Liang Ang</title>
+<meta name="description" content="Science of Deep Learning. A series by James Ming Liang Ang." data-series="science" data-field="description">
+<title data-series="science" data-field="page_title">Science of Deep Learning · James Ming Liang Ang</title>
 <link rel="canonical" href="https://jamesmldoesml.github.io/blogs/science-of-machine-learning-primer-series/">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <script>try { if (localStorage.getItem("theme") === "dark") document.documentElement.dataset.theme = "dark"; } catch {}</script>
@@ -51,16 +51,16 @@ window.MathJax = {
     </nav>
     <header class="subpage-title essay-title learning-dynamics-title science-of-machine-learning-title">
       <p class="eyebrow">Primer Series</p>
-      <h1>Science of Machine Learning</h1>
-      <p class="description learning-dynamics-tagline">From alchemy to a science of learning.</p>
-      <a class="primer-list-button" href="#series-primers">Jump straight to primer list ↓</a>
+      <h1 data-series="science" data-field="title">Science of Deep Learning</h1>
+      <p class="description learning-dynamics-tagline" data-series="science" data-field="tagline">From alchemy to a science of deep learning.</p>
+      <a class="primer-list-button" href="#series-tasters">Jump straight to taster list ↓</a>
     </header>
     <div class="byline">
       <p class="article-meta"><span>James Ming Liang Ang</span><span>16 October 2026</span></p>
     </div>
   </div>
 
-  <article class="primer-series-article" aria-label="Science of Machine Learning">
+  <article class="primer-series-article" aria-label="Science of Deep Learning" data-series="science" data-field="aria_label">
 <section class="row" aria-labelledby="from-alchemy-to-science">
         <h2 id="from-alchemy-to-science">Preamble. From Alchemy to Science</h2>
         <p>In 2017, accepting the NeurIPS Test of Time Award for his work with Ben Recht, Ali Rahimi argued that machine learning had become alchemy: a collection of recipes that worked, without a satisfactory account of why.<sup><a id="fnref-rahimi" href="#fn-rahimi" role="doc-noteref" aria-label="Footnote 1: Ali Rahimi’s talk">1</a>, <a id="fnref-lecun" href="#fn-lecun" role="doc-noteref" aria-label="Footnote 2: Yann LeCun’s response">2</a></sup> This was a striking departure from the optimism of just a few years earlier, when theory and practice had seemed to be drawing closer together—a contrast Mark Schmidt revisited in his <a href="https://qr.generatorqr.com/6y7G16gpF">tutorial slides</a>.</p>
@@ -78,7 +78,7 @@ window.MathJax = {
         </figure>
         <p>When solving a jigsaw puzzle, start with the corner pieces. In science, their counterparts are <em>minimal models</em>—less affectionately called “Mickey Mouse models”, at least among physicists. These deliberately simplified models often isolate an extreme or limiting case to expose a key aspect of the phenomenon we want to understand. They help us find counterexamples that can save us from pursuing a bad idea, disentangle effects that are difficult to separate in a more complex system, and sharpen our thinking. More frankly, they help us focus on the science without getting lost in complicated mathematics, serve as sanity checks (akin to unit tests) for more complex models, and provide useful teaching examples.</p>
         <p>This approach of using mathematical idealisations to study phenomena has a rich history. Galileo was a pioneering champion of it. He advocated a mathematical approach to nature in <em>The Assayer</em> (1623) and used idealised systems to develop his account of motion in <a href="https://galileoandeinstein.phys.virginia.edu/tns_draft/tns_001to061.html"><em>Two New Sciences</em></a> (1638). By setting aside complications such as friction and air resistance, he could isolate relationships that were difficult to discern in everyday experience. His work helped lay the foundations of kinematics and contributed to the development of the principle of inertia. One could argue that this approach helped set the Scientific Revolution in motion.</p>
-        <p>To my ear, some objections to a science of machine learning echo the doubts raised against Galileo’s new science of Physics. Indeed, to address possible accusations of physics envy, I will explore this in a separate essay. In the spirit of Galileo, I hope this collection can contribute, in a small way, to a scientific revolution in machine learning. My role is chiefly to make the work of researchers far more knowledgeable than I am more accessible. The writing comes in three forms:</p>
+        <p>To my ear, some objections to a science of deep learning echo the doubts raised against Galileo’s new science of Physics. Indeed, to address possible accusations of physics envy, I will explore this in a separate essay. In the spirit of Galileo, I hope this collection can contribute, in a small way, to a scientific revolution in deep learning. My role is chiefly to make the work of researchers far more knowledgeable than I am more accessible. The writing comes in three forms:</p>
         <ul>
           <li>A <strong>Taster</strong> is written for first-year undergraduates, with the aim of remaining accessible to interested high-school students.</li>
           <li>An <strong>Appetizer</strong> is written for early-stage graduate students, while remaining accessible to senior undergraduates.</li>
@@ -88,6 +88,7 @@ window.MathJax = {
         <p>I hope these pieces offer useful introductions to the field and encourage readers to ask new questions, develop new ideas, and pursue work of their own.</p>
       </section>
     <section class="primer-list" aria-labelledby="series-tasters">
+      <span id="series-primers" aria-hidden="true"></span>
       <div class="row primer-list-heading"><h2 id="series-tasters">Taster series</h2></div>
       <div class="row writing-index-item">
         <h3><a class="essay-link" data-local-index href="../learning-dynamics/">Training Dynamics</a></h3>
