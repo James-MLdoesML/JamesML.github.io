@@ -6,3 +6,7 @@
 /blogs/learning-dynamics/tutorial.html
 /blogs/learning-dynamics/additional-resources/learning-dynamics-tutorial.ipynb
 /blogs/learning-dynamics/additional-resources/learning-dynamics-resources.zip
+
+# Generated Python caches
+__pycache__/
+*.py[cod]
